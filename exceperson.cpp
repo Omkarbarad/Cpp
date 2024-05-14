@@ -30,12 +30,12 @@ int main() {
     Person person;
 
     try {
-        person.setName("John Doe"); // Valid name
+        person.setName("John Doe"); 
         person.setID(1001);
         person.printDetails();
         
-        person.setName(""); // Invalid name
-        person.printDetails(); // This won't be reached because of the exception
+        person.setName(""); 
+        person.printDetails();
     } catch (std::invalid_argument& e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }
