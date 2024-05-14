@@ -4,10 +4,8 @@
 using namespace std;
 
 int main() {
-    // Open a file named "data.txt" for reading
-    ifstream file("data.txt");
 
-    // Check if the file is opened successfully
+    ifstream file("data.txt");
     if (!file.is_open()) {
         cout << "Failed to open file!" << endl;
         return 1;
@@ -17,13 +15,9 @@ int main() {
     int wordCount = 0;
     int lineCount = 0;
     string line;
-
-    // Read data from the file
     while (getline(file, line)) {
-        lineCount++; // Increment line count for each line read
-        charCount += line.length(); // Add the length of the line to character count
-
-        // Count words in each line
+        lineCount++;
+        charCount += line.length(); 
         size_t pos = 0;
         while ((pos = line.find_first_not_of(' ', pos)) != string::npos) {
             pos = line.find_first_of(' ', pos);
